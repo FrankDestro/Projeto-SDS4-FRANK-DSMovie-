@@ -18,7 +18,7 @@ public class Score {
 	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant registrationDate;
-
+	
 	public Score() {
 	}
 	
@@ -55,5 +55,9 @@ public class Score {
 	public Instant getRegistrationDate() {
 		return registrationDate;
 	}
-	
+
+	public void setRegistrationDate(Instant registrationDate) {
+		this.registrationDate = registrationDate;
+	}
+
 }

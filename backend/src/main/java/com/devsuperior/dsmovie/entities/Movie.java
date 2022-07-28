@@ -2,13 +2,16 @@ package com.devsuperior.dsmovie.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,6 +29,10 @@ public class Movie implements Serializable {
 	@Column(columnDefinition = "TEXT")
 	private String synopsis; 
 	private Integer year;
+	
+	@OneToMany(mappedBy = "id.movie")
+	private Set<Score> scores = new HashSet<>();
+	
 	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant createdAt;
@@ -104,12 +111,11 @@ public class Movie implements Serializable {
 	public void setYear(Integer year) {
 		this.year = year;
 	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
 	
+	public Set<Score> getScores() {
+		return scores;
+	}
+
 	public Instant getCreatedAt() {
 		return createdAt;
 	}
@@ -118,6 +124,11 @@ public class Movie implements Serializable {
 		return updaedAt;
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

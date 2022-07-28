@@ -49,7 +49,9 @@ public class User implements Serializable {
 		this.email = email;
 	}
 	
-	
+	public void setCreatedAt(Instant createdAt) {
+		this.createdAt = createdAt;
+	}
 
 	public Instant getCreatedAt() {
 		return createdAt;
