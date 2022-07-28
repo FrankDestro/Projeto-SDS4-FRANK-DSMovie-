@@ -11,11 +11,6 @@
 
 html, body {
     background-color: #E5E5E5;
-   /* background-image: url("assets/img/back.jpg"); 
-    background-repeat: no-repeat, repeat;
-    background-attachment: scroll, fixed;
-    background-blend-mode: luminosity;
-    height: 1000px;*/
 }
 
 a, a:hover {
