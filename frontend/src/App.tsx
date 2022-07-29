@@ -6,11 +6,13 @@ import {
   import Listing from 'pages/Listing';
   import Form from 'pages/Form';
   import Navbar from "components/Navbar";
+import Search from "components/Search";
   
   function App() {
     return (
       <BrowserRouter>
         <Navbar />
+        <Search />
         <Routes>
           <Route path="/" element={<Listing />} />
           <Route path="/form">
